@@ -14,4 +14,8 @@ export class RideCoordinatesService {
   saveRiderCoordinates(CreateCoordinatesDto: CreateCoordinatesDto) {
     return this.riderCoodinateModel.create(CreateCoordinatesDto);
   }
+
+  getRiderCoordinates() {
+    return this.riderCoodinateModel.find();
+  }
 }
