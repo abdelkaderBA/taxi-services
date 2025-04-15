@@ -6,7 +6,9 @@ import { RideCoordinatesModule } from './ride-coordinates/ride-coordinates.modul
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/27017'),
+    MongooseModule.forRoot(
+      'mongodb://root:root@localhost:27017/taxi_db?authSource=admin',
+    ),
     RideCoordinatesModule,
   ],
   controllers: [LoggingServiceController],
