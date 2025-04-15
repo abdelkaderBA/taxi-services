@@ -2,9 +2,13 @@ import { Module } from '@nestjs/common';
 import { LoggingServiceController } from './logging-service.controller';
 import { LoggingServiceService } from './logging-service.service';
 import { MongooseModule } from '@nestjs/mongoose';
+import { RideCoordinatesModule } from './ride-coordinates/ride-coordinates.module';
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb://localhost/27017/logs_db')],
+  imports: [
+    MongooseModule.forRoot('mongodb://localhost/27017'),
+    RideCoordinatesModule,
+  ],
   controllers: [LoggingServiceController],
   providers: [LoggingServiceService],
 })
